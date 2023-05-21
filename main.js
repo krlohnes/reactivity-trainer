@@ -40,7 +40,7 @@ function loadModel(modelPath) {
     scene.remove(model);
   }
 
-  var loader = new GLTFLoader.GLTFLoader();
+  var loader = new GLTFLoader();
   loader.load(
     modelPath,
     function (gltf) {
