@@ -13,9 +13,12 @@ function init() {
     0.01,
     1000
   );
+  window.camera = camera;
   renderer = new THREE.WebGLRenderer();
   renderer.setSize(window.innerWidth, window.innerHeight);
   document.body.appendChild(renderer.domElement);
+  var bgColor = THREE.Color(0x42c8f5);
+  scene.background(bgColor);
 
   var light = new THREE.PointLight(0xffffff, 1, 100);
   light.position.set(0, 0, 10);
