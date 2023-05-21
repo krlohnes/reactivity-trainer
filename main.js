@@ -13,6 +13,7 @@ function init() {
     0.01,
     1000
   );
+  camera.rotation.x = 0.4363;
   window.camera = camera;
   renderer = new THREE.WebGLRenderer();
   renderer.setSize(window.innerWidth, window.innerHeight);
