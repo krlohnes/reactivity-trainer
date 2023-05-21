@@ -92,6 +92,11 @@ function render() {
   renderer.render(scene, camera);
 }
 
+function update() {
+  var delta = clock.getDelta();
+  mixer.update( delta );
+}
+
 // Initialize the app
 window.addEventListener('load', function () {
   clock = new THREE.Clock();
