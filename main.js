@@ -18,7 +18,7 @@ function init() {
   renderer.setSize(window.innerWidth, window.innerHeight);
   document.body.appendChild(renderer.domElement);
   var bgColor = new THREE.Color(0x42c8f5);
-  scene.background(bgColor);
+  scene.background = bgColor;
 
   var light = new THREE.PointLight(0xffffff, 1, 100);
   light.position.set(0, 0, 10);
