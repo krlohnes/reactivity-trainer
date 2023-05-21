@@ -10,7 +10,7 @@ function init() {
   camera = new THREE.PerspectiveCamera(
     75,
     window.innerWidth / window.innerHeight,
-    0.1,
+    0.01,
     1000
   );
   renderer = new THREE.WebGLRenderer();
@@ -58,6 +58,7 @@ function loadModel(modelPath) {
       }
 
       scene.add(model);
+      animate();
     },
     undefined,
     function (error) {
@@ -71,6 +72,12 @@ function onModelChange() {
   var modelPath = modelDropdown.value;
   loadModel(modelPath);
   render();
+}
+
+function animate() {
+  var mixerUpdateDelta = new THREE.Clock();        
+  if(typeof mixer !== "undefined") mixer.update( mixerUpdateDelta.getDelta());
+  renderer.setAnimationLoop(render);
 }
 
 // Update the camera position based on the slider value
@@ -90,11 +97,6 @@ function render() {
   }
 
   renderer.render(scene, camera);
-}
-
-function update() {
-  var delta = clock.getDelta();
-  mixer.update( delta );
 }
 
 // Initialize the app
